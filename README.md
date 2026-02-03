@@ -28,6 +28,30 @@ People who want to describe what they want and have it built correctly — witho
 
 ---
 
+## 🛠 Developing GSD (Repository Structure)
+
+This repository serves as the **Source of Truth** for the GSD Antigravity template.
+
+### Directory Structure
+- **`./` (Root)**: The active GSD instance used to develop and maintain this project itself.
+- **`antigravity-support/`**: The clean distribution package that users copy to their projects.
+
+**Important:** When making changes to GSD workflows or skills, you must ensure both the root (for testing) and `antigravity-support` (for distribution) are updated. The `/update` workflow handles this synchronization.
+
+### 🛡 Safe Update Workflow
+
+This repo includes a custom Interactive Update Workflow to prevent accidental upstream breakage.
+
+**How it works (`/update`):**
+1. **Fetch**: Downloads latest upstream changes to a temp folder.
+2. **Validate**: Automatically runs `validate-all.sh` to ensure structural integrity.
+3. **Preview**: Displays a file-diff summary between upstream and `antigravity-support`.
+4. **Confirm**: Asks for explicit confirmation before applying changes.
+
+This protects the distribution package from being polluted by incompatible changes.
+
+---
+
 ## 🚀 Getting Started
 
 **PowerShell (Windows):**
