@@ -115,6 +115,12 @@ Copy-Item -Recurse -Force ".gsd-update-temp/.gsd/templates/*" ".gsd/templates/"
 # Update root files
 Copy-Item -Force ".gsd-update-temp/GSD-STYLE.md" "./"
 Copy-Item -Force ".gsd-update-temp/CHANGELOG.md" "./"
+
+# Update antigravity-support (mirror)
+Copy-Item -Recurse -Force ".gsd-update-temp/.agent/*" "antigravity-support/.agent/"
+Copy-Item -Recurse -Force ".gsd-update-temp/.gsd/templates/*" "antigravity-support/.gsd/templates/"
+Copy-Item -Force ".gsd-update-temp/GSD-STYLE.md" "antigravity-support/"
+Copy-Item -Force ".gsd-update-temp/CHANGELOG.md" "antigravity-support/"
 ```
 
 **Bash:**
@@ -132,6 +138,12 @@ cp -r .gsd-update-temp/.gsd/templates/* .gsd/templates/
 # Update root files
 cp .gsd-update-temp/GSD-STYLE.md ./
 cp .gsd-update-temp/CHANGELOG.md ./
+
+# Update antigravity-support (mirror)
+cp -r .gsd-update-temp/.agent/* antigravity-support/.agent/
+cp -r .gsd-update-temp/.gsd/templates/* antigravity-support/.gsd/templates/
+cp .gsd-update-temp/GSD-STYLE.md antigravity-support/
+cp .gsd-update-temp/CHANGELOG.md antigravity-support/
 ```
 
 ---
