@@ -67,7 +67,7 @@ git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 Copy-Item -Recurse gsd-template\antigravity-support\.agent .\
 Copy-Item -Recurse gsd-template\antigravity-support\.gemini .\
 Copy-Item -Recurse gsd-template\antigravity-support\.gsd .\
-Copy-Item -Recurse gsd-template\antigravity-support\scripts .\
+Copy-Item -Recurse gsd-template\antigravity-support\.scripts .\
 Copy-Item gsd-template\antigravity-support\GSD-STYLE.md .\
 Copy-Item gsd-template\antigravity-support\VERSION .\
 Copy-Item gsd-template\antigravity-support\CHANGELOG.md .\
@@ -90,7 +90,7 @@ git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 cp -r gsd-template/antigravity-support/.agent ./
 cp -r gsd-template/antigravity-support/.gemini ./
 cp -r gsd-template/antigravity-support/.gsd ./
-cp -r gsd-template/antigravity-support/scripts ./
+cp -r gsd-template/antigravity-support/.scripts ./
 cp gsd-template/antigravity-support/GSD-STYLE.md ./
 cp gsd-template/antigravity-support/VERSION ./
 cp gsd-template/antigravity-support/CHANGELOG.md ./
@@ -336,16 +336,16 @@ Run validation scripts to verify GSD structure:
 
 **PowerShell:**
 ```powershell
-.\scripts\validate-all.ps1      # Run all validators
-.\scripts\validate-workflows.ps1  # Workflows only
-.\scripts\validate-skills.ps1     # Skills only
+.\.scripts\validate-all.ps1      # Run all validators
+.\.scripts\validate-workflows.ps1  # Workflows only
+.\.scripts\validate-skills.ps1     # Skills only
 ```
 
 **Bash:**
 ```bash
-./scripts/validate-all.sh      # Run all validators
-./scripts/validate-workflows.sh  # Workflows only
-./scripts/validate-skills.sh     # Skills only
+./.scripts/validate-all.sh      # Run all validators
+./.scripts/validate-workflows.sh  # Workflows only
+./.scripts/validate-skills.sh     # Skills only
 ```
 
 ---
