@@ -96,6 +96,45 @@ B) No — Cancel
 
 ---
 
+## 4. Validate & Preview Changes
+
+**PowerShell:**
+```powershell
+# Validation
+Write-Output "`nRunning validation on update package..."
+if (Test-Path ".gsd-update-temp/scripts/validate-all.ps1") {
+    & .gsd-update-temp/scripts/validate-all.ps1
+    if ($LASTEXITCODE -ne 0) {
+        Write-Warning "VALIDATION FAILED in update package. Proceed with caution."
+    }
+}
+
+# Diff Preview
+Write-Output "`n--- FILE CHANGES (Diff against antigravity-support) ---"
+git diff --no-index --stat antigravity-support .gsd-update-temp
+```
+
+**Bash:**
+```bash
+# Validation
+echo -e "\nRunning validation on update package..."
+if [ -f ".gsd-update-temp/scripts/validate-all.sh" ]; then
+    chmod +x .gsd-update-temp/scripts/*.sh
+    if ! .gsd-update-temp/scripts/validate-all.sh > /dev/null; then
+       echo "⚠️  VALIDATION FAILED in update package. Proceed with caution."
+    else
+       echo "✅ Validation passed."
+    fi
+fi
+
+# Diff Preview
+echo -e "\n--- FILE CHANGES (Diff against antigravity-support) ---"
+# Check for added/modified files
+diff -rq --exclude=".git" antigravity-support .gsd-update-temp | grep -v "Only in antigravity-support"
+```
+
+---
+
 ## 5. Apply Updates
 
 **If user confirms:**
