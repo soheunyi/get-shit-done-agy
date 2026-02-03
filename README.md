@@ -60,7 +60,7 @@ This protects the distribution package from being polluted by incompatible chang
 cd your-project
 
 # Clone the GSD template
-git clone https://github.com/toonight/get-shit-done-for-antigravity.git gsd-template
+git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 
 # Copy to your project
 Copy-Item -Recurse gsd-template\.agent .\
@@ -77,7 +77,7 @@ Remove-Item -Recurse -Force gsd-template
 cd your-project
 
 # Clone the GSD template
-git clone https://github.com/toonight/get-shit-done-for-antigravity.git gsd-template
+git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 
 # Copy to your project
 cp -r gsd-template/.agent ./
