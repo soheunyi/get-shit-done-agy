@@ -22,8 +22,11 @@ Create `/sync-agy` workflow to publish root development changes to the `antigrav
         - `.gsd/templates/` → `antigravity-support/.gsd/templates/`
         - `scripts/validate-*` → `antigravity-support/.scripts/`
         - Root docs (`README.md`, `GSD-STYLE.md`, `CHANGELOG.md`, `LICENSE`, `VERSION`) → `antigravity-support/`
-    3.  **Validation**: Run `antigravity-support/.scripts/validate-all.sh` (or ps1) to verify distribution integrity.
-    4.  **Confirm**: "Sync complete. Distribution ready."
+    3.  **Sanitization Check**:
+        - Grep for "Claude", "Anthropic", "Sonnet" in the `.agent/` and `.gsd/templates/` directories.
+        - Fail if found (preventing "Claude-isms" from leaking to distribution).
+    4.  **Validation**: Run `antigravity-support/.scripts/validate-all.sh` (or ps1) to verify distribution integrity.
+    5.  **Confirm**: "Sync complete. Distribution ready."
   </action>
   <verify>test -f .agent/workflows/sync-agy.md</verify>
   <done>Workflow file exists</done>
