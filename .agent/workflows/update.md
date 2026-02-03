@@ -102,8 +102,8 @@ B) No — Cancel
 ```powershell
 # Validation
 Write-Output "`nRunning validation on update package..."
-if (Test-Path ".gsd-update-temp/scripts/validate-all.ps1") {
-    & .gsd-update-temp/scripts/validate-all.ps1
+if (Test-Path ".gsd-update-temp/.scripts/validate-all.ps1") {
+    & .gsd-update-temp/.scripts/validate-all.ps1
     if ($LASTEXITCODE -ne 0) {
         Write-Warning "VALIDATION FAILED in update package. Proceed with caution."
     }
@@ -118,9 +118,9 @@ git diff --no-index --stat antigravity-support .gsd-update-temp
 ```bash
 # Validation
 echo -e "\nRunning validation on update package..."
-if [ -f ".gsd-update-temp/scripts/validate-all.sh" ]; then
-    chmod +x .gsd-update-temp/scripts/*.sh
-    if ! .gsd-update-temp/scripts/validate-all.sh > /dev/null; then
+if [ -f ".gsd-update-temp/.scripts/validate-all.sh" ]; then
+    chmod +x .gsd-update-temp/.scripts/*.sh
+    if ! .gsd-update-temp/.scripts/validate-all.sh > /dev/null; then
        echo "⚠️  VALIDATION FAILED in update package. Proceed with caution."
     else
        echo "✅ Validation passed."
