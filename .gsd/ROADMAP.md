@@ -12,11 +12,9 @@
 
 ---
 
-## Phases
-
 ### Phase 1: Update Documentation for Antigravity Support
 **Goal**: Update README to explain `antigravity-support` usage and the proper setup flow for new repos
-**Status**: ⬜ Not Started
+**Status**: ✅ Complete
 **Depends on**: None
 
 **Plans:**
