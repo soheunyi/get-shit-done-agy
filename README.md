@@ -63,9 +63,11 @@ cd your-project
 git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 
 # Copy to your project
-Copy-Item -Recurse gsd-template\.agent .\
-Copy-Item -Recurse gsd-template\.gemini .\
-Copy-Item -Recurse gsd-template\.gsd .\
+# Copy to your project
+Copy-Item -Recurse gsd-template\antigravity-support\.agent .\
+Copy-Item -Recurse gsd-template\antigravity-support\.gemini .\
+Copy-Item -Recurse gsd-template\antigravity-support\.gsd .\
+Copy-Item gsd-template\antigravity-support\GSD-STYLE.md .\
 
 # Clean up
 Remove-Item -Recurse -Force gsd-template
@@ -80,9 +82,11 @@ cd your-project
 git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 
 # Copy to your project
-cp -r gsd-template/.agent ./
-cp -r gsd-template/.gemini ./
-cp -r gsd-template/.gsd ./
+# Copy to your project
+cp -r gsd-template/antigravity-support/.agent ./
+cp -r gsd-template/antigravity-support/.gemini ./
+cp -r gsd-template/antigravity-support/.gsd ./
+cp gsd-template/antigravity-support/GSD-STYLE.md ./
 
 # Clean up
 rm -rf gsd-template
