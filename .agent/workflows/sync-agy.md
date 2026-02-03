@@ -95,9 +95,9 @@ Copy-Item -Force "CHANGELOG.md" "antigravity-support/"
 Copy-Item -Force "LICENSE" "antigravity-support/"
 Copy-Item -Force "VERSION" "antigravity-support/"
 
-# Sync Scripts (Mapping scripts/ -> .scripts/)
+# Sync Scripts (Mapping .scripts/ -> .scripts/)
 if (-not (Test-Path "antigravity-support/.scripts")) { New-Item -ItemType Directory "antigravity-support/.scripts" }
-Copy-Item -Force "scripts/validate-*" "antigravity-support/.scripts/"
+Copy-Item -Force ".scripts/validate-*" "antigravity-support/.scripts/"
 ```
 
 **Bash:**
@@ -119,10 +119,10 @@ cp CHANGELOG.md antigravity-support/
 cp LICENSE antigravity-support/
 cp VERSION antigravity-support/
 
-# Sync Scripts (Mapping scripts/ -> .scripts/)
+# Sync Scripts (Mapping .scripts/ -> .scripts/)
 # Only copy validators, skip build hooks
 mkdir -p antigravity-support/.scripts
-cp scripts/validate-* antigravity-support/.scripts/
+cp .scripts/validate-* antigravity-support/.scripts/
 ```
 
 ---
