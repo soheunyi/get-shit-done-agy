@@ -24,8 +24,11 @@
 
 ### Phase 2: Distribution Sync Tools
 **Goal**: Create `/sync-agy` workflow to publish root changes to `antigravity-support` (source-to-distribution sync).
-**Status**: ⬜ Not Started
+**Status**: ✅ Complete
 **Depends on**: Phase 1
+
+**Plans:**
+- [x] 1-PLAN.md (Implement Sync Workflow)
 
 ### Phase 3: Project Initialization (Planned)
 **Goal**: Verify `/new-project` works with new structure
