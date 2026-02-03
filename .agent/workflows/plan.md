@@ -39,11 +39,12 @@ Create executable phase prompts (PLAN.md files) for a roadmap phase with integra
 
 <philosophy>
 
-## Solo Developer + Claude Workflow
-You are planning for ONE person (the user) and ONE implementer (Claude).
-- No teams, stakeholders, ceremonies, coordination overhead
+## Solo Developer + Agent Workflow
+You are planning for ONE person (the user) and ONE implementer (the Agent).
+- The Agent is the builder
+- The User is the reviewer/architection overhead
 - User is the visionary/product owner
-- Claude is the builder
+- The Agent is the builder
 
 ## Plans Are Prompts
 PLAN.md is NOT a document that gets transformed into a prompt.
@@ -349,11 +350,11 @@ Plans:
 
 | Type | Use For | Autonomy |
 |------|---------|----------|
-| `auto` | Everything Claude can do independently | Fully autonomous |
+| `auto` | Everything the Agent can do independently | Fully autonomous |
 | `checkpoint:human-verify` | Visual/functional verification | Pauses for user |
 | `checkpoint:decision` | Implementation choices | Pauses for user |
 
-**Automation-first rule:** If Claude CAN do it, Claude MUST do it. Checkpoints are for verification AFTER automation.
+**Automation-first rule:** If the Agent CAN do it, the Agent MUST do it. Checkpoints are for verification AFTER automation.
 
 </task_types>
 
