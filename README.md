@@ -67,7 +67,11 @@ git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 Copy-Item -Recurse gsd-template\antigravity-support\.agent .\
 Copy-Item -Recurse gsd-template\antigravity-support\.gemini .\
 Copy-Item -Recurse gsd-template\antigravity-support\.gsd .\
+Copy-Item -Recurse gsd-template\antigravity-support\scripts .\
 Copy-Item gsd-template\antigravity-support\GSD-STYLE.md .\
+Copy-Item gsd-template\antigravity-support\VERSION .\
+Copy-Item gsd-template\antigravity-support\CHANGELOG.md .\
+Copy-Item gsd-template\antigravity-support\LICENSE .\
 
 # Clean up
 Remove-Item -Recurse -Force gsd-template
@@ -86,7 +90,11 @@ git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 cp -r gsd-template/antigravity-support/.agent ./
 cp -r gsd-template/antigravity-support/.gemini ./
 cp -r gsd-template/antigravity-support/.gsd ./
+cp -r gsd-template/antigravity-support/scripts ./
 cp gsd-template/antigravity-support/GSD-STYLE.md ./
+cp gsd-template/antigravity-support/VERSION ./
+cp gsd-template/antigravity-support/CHANGELOG.md ./
+cp gsd-template/antigravity-support/LICENSE ./
 
 # Clean up
 rm -rf gsd-template
