@@ -54,3 +54,10 @@ If a user uses legacy AGY command phrasing, map it to the corresponding skill:
 
 Skill wrappers in `.codex/skills` delegate to canonical command definitions in `commands/gsd/*.md`.
 When behavior questions arise, follow command files first, then this file.
+
+
+## Research helpers
+
+Research-first skills live in the portable pack at `get-research-done/` (not in root `.agent/skills`).
+Install into a target repo with:
+- `bash get-research-done/scripts/install.sh /path/to/target-repo`

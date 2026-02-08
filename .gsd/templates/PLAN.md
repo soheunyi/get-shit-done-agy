@@ -77,7 +77,7 @@ After all tasks complete, verify:
 | `auto` | Everything the Agent can do independently | Fully autonomous |
 | `checkpoint:human-verify` | Visual/functional verification | Pauses for user |
 | `checkpoint:decision` | Implementation choices | Pauses for user |
-
+/e
 ## Wave Assignment
 
 | Wave | Use For |

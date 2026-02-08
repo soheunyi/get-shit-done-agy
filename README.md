@@ -373,6 +373,22 @@ Run validation scripts to verify GSD structure:
 - [Examples](.gsd/examples/) — Usage walkthroughs and quick reference
 - [Templates](.gsd/templates/) — Document templates for plans, verification, etc.
 
+## 🔬 Research Pack (Portable)
+
+If your primary workflow is AI/statistics research, use the portable `get-research-done/` pack.
+
+Copy that directory into any repo, then install:
+
+```bash
+bash get-research-done/scripts/install.sh /path/to/target-repo
+```
+
+PowerShell:
+
+```powershell
+.\get-research-done\scripts\install.ps1 -Root "C:\path\to\target-repo"
+```
+
 ---
 
 ## 🧠 Philosophy

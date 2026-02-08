@@ -20,6 +20,16 @@ This package contains the complete GSD workflow system adapted for Google Antigr
 
 For Codex CLI, use `$gsd-help` (or alias `/help`) after installation.
 
+## Research-only Pack
+
+This distribution also includes `get-research-done/` as a portable research workflow pack.
+
+Install it into any target repo:
+
+```bash
+bash get-research-done/scripts/install.sh /path/to/target-repo
+```
+
 ## Workflow Map
 
 | Category | Command | Purpose |
