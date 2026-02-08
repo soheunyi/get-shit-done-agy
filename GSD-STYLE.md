@@ -11,6 +11,7 @@ GSD is a **meta-prompting system** where every file is both implementation and s
 - **Solo developer + AI workflow** (no enterprise patterns)
 - **Context engineering** (manage the context window deliberately)
 - **Plans as prompts** (PLAN.md files are executable, not documents to transform)
+- **Multi-runtime parity** (Claude/OpenCode/Gemini/Codex share core behavior)
 
 ---
 
@@ -29,6 +30,13 @@ Specialized agent behaviors. Each skill:
 - Has YAML frontmatter with `name` and `description`
 - Contains detailed methodology
 - Is referenced by parent workflows
+
+### Codex Orchestration (`AGENTS.md` + `.codex/skills/*/SKILL.md`)
+
+Codex runtime support uses:
+- `AGENTS.md` for project-level behavior and command alias mapping
+- `.codex/skills/*/SKILL.md` as reusable workflow wrappers
+- Canonical workflow behavior remains in `commands/gsd/*.md`
 
 ### Templates (`.gsd/templates/*.md`)
 

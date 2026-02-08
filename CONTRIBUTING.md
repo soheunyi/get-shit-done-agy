@@ -6,7 +6,7 @@ No enterprise theater. Ship useful code.
 
 ## Philosophy
 
-GSD optimizes for **solo developer + Claude workflow**. The release process follows the same principle: complexity lives in automation, not your workflow.
+GSD optimizes for **solo developer + AI workflow** (Claude/OpenCode/Gemini/Codex). The release process follows the same principle: complexity lives in automation, not your workflow.
 
 **What this means:**
 - No sprint ceremonies or release committees

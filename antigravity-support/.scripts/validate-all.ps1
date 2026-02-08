@@ -27,6 +27,12 @@ Write-Host "▶ Running template validation..." -ForegroundColor Cyan
 if ($LASTEXITCODE -ne 0) { $TotalErrors++ }
 Write-Host ""
 
+# Run Codex validator
+Write-Host "▶ Running Codex validation..." -ForegroundColor Cyan
+& "$PSScriptRoot\validate-codex.ps1"
+if ($LASTEXITCODE -ne 0) { $TotalErrors++ }
+Write-Host ""
+
 # Summary
 Write-Host "╔═══════════════════════════════════════════════════════╗" -ForegroundColor Magenta
 Write-Host "║                    SUMMARY                            ║" -ForegroundColor Magenta

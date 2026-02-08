@@ -30,7 +30,8 @@ Write-Output "Running Sanitization Check..."
 $forbidden = @("Claude", "Anthropic", "Sonnet")
 $errors = 0
 
-$files = Get-ChildItem -Recurse -Path .agent, .gsd\templates -Include *.md, *.txt, *.json | Where-Object { $_.Name -ne "sync-agy.md" }
+$files = Get-ChildItem -Recurse -Path .agent, .codex\skills, .gsd\templates -Include *.md, *.txt, *.json | Where-Object { $_.Name -ne "sync-agy.md" }
+$files += Get-Item "AGENTS.md"
 foreach ($file in $files) {
     $content = Get-Content $file.FullName -Raw
     foreach ($term in $forbidden) {
@@ -54,8 +55,8 @@ echo "Running Sanitization Check..."
 forbidden=("Claude" "Anthropic" "Sonnet")
 errors=0
 
-# Find files in .agent and .gsd/templates (excluding hidden/binary if needed)
-find .agent .gsd/templates -type f \( -name "*.md" -o -name "*.txt" -o -name "*.json" \) ! -name "sync-agy.md" -print0 | while IFS= read -r -d '' file; do
+# Find files in .agent, .codex/skills, AGENTS.md, and .gsd/templates (excluding hidden/binary if needed)
+find .agent .codex/skills .gsd/templates AGENTS.md -type f \( -name "*.md" -o -name "*.txt" -o -name "*.json" \) ! -name "sync-agy.md" -print0 | while IFS= read -r -d '' file; do
     for term in "${forbidden[@]}"; do
         if grep -q "$term" "$file"; then
             echo "⚠️  SANITIZATION ERROR: Found '$term' in $file"
@@ -65,9 +66,9 @@ find .agent .gsd/templates -type f \( -name "*.md" -o -name "*.txt" -o -name "*.
 done
 
 # Note: Bash variable propagation from subshells can be tricky, checking exit code of grep approach
-if grep -rE "Claude|Anthropic|Sonnet" .agent .gsd/templates --exclude="sync-agy.md" > /dev/null; then
+if grep -rE "Claude|Anthropic|Sonnet" .agent .codex/skills .gsd/templates AGENTS.md --exclude="sync-agy.md" > /dev/null; then
     echo "❌ Sanitization errors found. Aborting sync."
-    grep -rE "Claude|Anthropic|Sonnet" .agent .gsd/templates --exclude="sync-agy.md"
+    grep -rE "Claude|Anthropic|Sonnet" .agent .codex/skills .gsd/templates AGENTS.md --exclude="sync-agy.md"
     exit 1
 fi
 
@@ -84,6 +85,10 @@ Write-Output "Syncing directories..."
 
 # Sync .agent (Workflows & Skills)
 Copy-Item -Recurse -Force ".agent" "antigravity-support/"
+
+# Sync Codex artifacts
+Copy-Item -Force "AGENTS.md" "antigravity-support/"
+Copy-Item -Recurse -Force ".codex" "antigravity-support/"
 
 # Sync Templates (Only templates, preserve consumer state)
 if (-not (Test-Path "antigravity-support/.gsd")) { New-Item -ItemType Directory "antigravity-support/.gsd" }
@@ -107,6 +112,12 @@ echo "Syncing directories..."
 # Sync .agent
 rm -rf antigravity-support/.agent
 cp -r .agent antigravity-support/
+
+# Sync Codex artifacts
+rm -f antigravity-support/AGENTS.md
+cp AGENTS.md antigravity-support/
+rm -rf antigravity-support/.codex
+cp -r .codex antigravity-support/
 
 # Sync Templates
 mkdir -p antigravity-support/.gsd
@@ -163,6 +174,7 @@ cd ..
 
 Files synced:
 - .agent/ (Workflows & Skills)
+- AGENTS.md + .codex/skills/
 - .gsd/templates/
 - Metadata (CHANGELOG, VERSION, LICENSE)
 - Validators (mapped to .scripts/)

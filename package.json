@@ -6,6 +6,8 @@
     "get-shit-done-cc": "bin/install.js"
   },
   "files": [
+    "AGENTS.md",
+    ".codex",
     "bin",
     "commands",
     "get-shit-done",
@@ -21,7 +23,9 @@
     "context-engineering",
     "spec-driven-development",
     "gemini",
-    "gemini-cli"
+    "gemini-cli",
+    "codex",
+    "codex-cli"
   ],
   "author": "TÂCHES",
   "license": "MIT",

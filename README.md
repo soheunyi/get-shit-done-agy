@@ -65,9 +65,11 @@ git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 # Copy to your project
 # Copy to your project
 Copy-Item -Recurse gsd-template\antigravity-support\.agent .\
+Copy-Item -Recurse gsd-template\antigravity-support\.codex .\
 Copy-Item -Recurse gsd-template\antigravity-support\.gemini .\
 Copy-Item -Recurse gsd-template\antigravity-support\.gsd .\
 Copy-Item -Recurse gsd-template\antigravity-support\.scripts .\
+Copy-Item gsd-template\antigravity-support\AGENTS.md .\
 Copy-Item gsd-template\antigravity-support\GSD-STYLE.md .\
 Copy-Item gsd-template\antigravity-support\VERSION .\
 Copy-Item gsd-template\antigravity-support\CHANGELOG.md .\
@@ -88,9 +90,11 @@ git clone https://github.com/soheunyi/get-shit-done-agy.git gsd-template
 # Copy to your project
 # Copy to your project
 cp -r gsd-template/antigravity-support/.agent ./
+cp -r gsd-template/antigravity-support/.codex ./
 cp -r gsd-template/antigravity-support/.gemini ./
 cp -r gsd-template/antigravity-support/.gsd ./
 cp -r gsd-template/antigravity-support/.scripts ./
+cp gsd-template/antigravity-support/AGENTS.md ./
 cp gsd-template/antigravity-support/GSD-STYLE.md ./
 cp gsd-template/antigravity-support/VERSION ./
 cp gsd-template/antigravity-support/CHANGELOG.md ./
@@ -101,6 +105,14 @@ rm -rf gsd-template
 ```
 
 Then run `/new-project` and follow the prompts.
+
+### Codex CLI Usage
+
+Codex uses `AGENTS.md` + skills in `.codex/skills`.
+
+- Invoke command-equivalent skills directly (for example: `$gsd-help`, `$gsd-plan-phase`)
+- Legacy aliases like `/plan 1`, `/execute 1`, `/verify 1` are mapped in `AGENTS.md`
+- Skills are source-of-truth wrappers around `commands/gsd/*.md`
 
 ---
 
@@ -308,8 +320,13 @@ All workflow files include **dual syntax** — both PowerShell and Bash commands
 ├── workflows/        # 21 slash commands
 └── skills/           # 8 agent specializations
 
+.codex/
+└── skills/           # Codex skill wrappers for GSD workflows
+
 .gemini/
 └── GEMINI.md         # Rules enforcement
+
+AGENTS.md             # Codex orchestration + command alias mapping
 
 .gsd/
 ├── SPEC.md           # ← START HERE (finalize first)

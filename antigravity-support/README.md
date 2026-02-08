@@ -6,15 +6,19 @@ This package contains the complete GSD workflow system adapted for Google Antigr
 
 ## Installation
 
-1. **Copy** the `.agent` directory from this package to the root of your project:
+1. **Copy** GSD runtime assets from this package to the root of your project:
    ```bash
    cp -r /path/to/antigravity-support/.agent /path/to/your/project/
+   cp -r /path/to/antigravity-support/.codex /path/to/your/project/
+   cp /path/to/antigravity-support/AGENTS.md /path/to/your/project/
    ```
 
 2. **Initialize** the project:
    ```
    /new-project
    ```
+
+For Codex CLI, use `$gsd-help` (or alias `/help`) after installation.
 
 ## Workflow Map
 
